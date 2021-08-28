@@ -1,0 +1,12 @@
+async function sendRequest(options: ApiRequestOptions, url: string): Promise<AxiosResponse<any>> {
+    const request: AxiosRequestConfig = {
+        url,
+        method: options.method,
+        headers: await getHeaders(options),
+        data: getRequestBody(options),
+    };
+    if (OpenAPI.WITH_CREDENTIALS) {
+        request.withCredentials = true;
+    }
+    return await axios(request);
+}

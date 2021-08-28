@@ -1,0 +1,9 @@
+function getRequestBody(options: ApiRequestOptions): BodyInit | undefined {
+    if (options.formData) {
+        return getFormData(options.formData);
+    }
+    if (options.body) {
+        return options.body;
+    }
+    return undefined;
+}

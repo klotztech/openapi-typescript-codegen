@@ -1,5 +1,6 @@
 export declare enum HttpClient {
     FETCH = 'fetch',
+    AXIOS = 'axios',
     XHR = 'xhr',
     NODE = 'node',
 }
